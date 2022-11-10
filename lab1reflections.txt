@@ -1,1 +1,4 @@
 
+1b) What visibility should you use for the different methods and variables that the classes contain? Which interface should you expose?
+ANS:The method that we used for variables is private and the reason for that, is the fact that the limiting the other classes to manipulate those variable.
+ We have even changed the visibility of methods(setTurboOn, setTurboOff) to private becouse they are methods used only for Saab95. other classes dont need those methods and making them private is a great idea.
