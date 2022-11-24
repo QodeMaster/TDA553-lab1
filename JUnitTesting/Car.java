@@ -56,6 +56,7 @@ public class Car implements Movable {
 	    currentSpeed = 0;
     }
 
+    @Override
     public void move() {
         switch(direction) {
             case 0:
@@ -93,5 +94,11 @@ public class Car implements Movable {
 
     public double getYCord() {
         return yCord;
+    }
+    public void setXCord(double newXCord) {
+        xCord = newXCord;
+    }
+    public void setYCord(double newYCord) {
+        yCord = newYCord;
     }
 }
