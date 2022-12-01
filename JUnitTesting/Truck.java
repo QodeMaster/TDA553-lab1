@@ -7,7 +7,7 @@ public class Truck extends Car {
     private int angle;
 
     public Truck(int nrDoors, int enginePower, int currentSpeed, Color color, String name, int dAngle) {
-        super(nrDoors, enginePower, currentSpeed, color, name);
+        super(nrDoors, enginePower, currentSpeed, color, name, 1.0);
         this.angle = 0;
         this.dAngle = dAngle;
     }
