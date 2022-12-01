@@ -1,0 +1,12 @@
+1.	Both Volvo and Scania uses gas() and brake() which has increment, but increment have different functionalities in both cars. 
+We have moved the methods to the superclass, car, and both Volvo and Scania can call it whenever needed. 
+This design follows “Liskov Substitution Principle” which states that objects of subclasses behave the same way as its superclass. 
+There is no contract between Volvo and Scania class because they both inherits the gas() and brake() methods. A further contract would be redundant.
+
+2.	We have handled the code duplication by subclassing and delegation when needed. 
+Volvo and Scania can not exist without their superclass “Truck” whose superclass is “Car” which means our design is even composite. 
+We choose this because lots of  properties were same in both car transporter and Scania. 
+The repair shop and car transporter contains the load and unload functionality but since the implementations are to different they are not considered duplicates. 
+
+3.	   We didn’t need to change the structure of our program when adding the new code. 
+The newer classes were either extending from the existing classes or they were different enough to be a separate class structure.
