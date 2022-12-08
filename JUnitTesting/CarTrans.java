@@ -7,7 +7,7 @@ public class CarTrans extends Truck {
     private ArrayList<Car> arr;
 
     public CarTrans(){
-        super(2, 180, 0, Color.blue, "CarTrans", 70);
+        super(2, 180, 0, Color.blue, "CarTrans", 70, null);
         arr = new ArrayList<>();
     }
 

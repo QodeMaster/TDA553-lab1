@@ -1,6 +1,12 @@
 package JUnitTesting;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 public class Car implements Movable { 
     private int nrDoors; // Number of doors on the car
@@ -12,17 +18,27 @@ public class Car implements Movable {
     private int direction; // direction of car, 0: up, 1: right, 2: down, 3: left
     private double xCord;
     private double yCord;
+    private boolean isEngineOn;
+    BufferedImage img;
 
-    public Car(int nrDoors, double enginePower, double currentSpeed, Color color, String modelName, double speedFactor) {
+    public Car(int nrDoors, double enginePower, double currentSpeed, Color color, String modelName, double speedFactor, String adress) {
         this.nrDoors      = nrDoors;
         this.enginePower  = enginePower;
         this.currentSpeed = currentSpeed;
         this.color        = color;
         this.modelName    = modelName;
         this.speedFactor = speedFactor;
-        this.direction = 0;
+        this.direction = 1;
         this.xCord = 10.0;
         this.yCord = 10.0;
+        this.isEngineOn = false;
+        try {
+            img = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/" + adress));
+           
+        } catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
     }
 
     public int getNrDoors(){
@@ -55,11 +71,12 @@ public class Car implements Movable {
     }
 
     public void startEngine(){
-	    currentSpeed = 0.1;
+        isEngineOn = true;
+	    currentSpeed += 0.1;
     }
 
     public void stopEngine(){
-	    currentSpeed = 0;
+	    isEngineOn = false;
     }
 
     public void incrementSpeed(double amount){
@@ -74,14 +91,14 @@ public class Car implements Movable {
 
     // TODO fix this method according to lab pm
     public void gas(double amount){
-        if(0 <= amount && amount <= 1) {
+        if(0 <= amount && amount <= 1 && isEngineOn) {
             incrementSpeed(amount);
         }
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
-        if(0 <= amount && amount <= 1) {
+        if(0 <= amount && amount <= 1 && isEngineOn) {
             decrementSpeed(amount);
         }
     }
