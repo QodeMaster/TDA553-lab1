@@ -5,11 +5,6 @@ import org.junit.Test;
 
 
 public class VolvoTestJUnit {
-  @Test
-  public void isCurrentSpeedZero() {
-    Volvo240 volvo = new Volvo240();
-    assertEquals(0.0, volvo.getCurrentSpeed(), 0);
-  }
 
   @Test
   public void doesDirectionWork() {
@@ -19,9 +14,13 @@ public class VolvoTestJUnit {
   }
 
   @Test
-  public void isEqualFourDoors() {
+  public void turnRightAllTheWay() {
     Volvo240 volvo = new Volvo240();
-    assertEquals(4.0, volvo.getNrDoors(), 0);
+    volvo.turnRight();
+    volvo.turnRight();
+    volvo.turnRight();
+    volvo.turnRight();
+    assertEquals(0, volvo.getDirection(), 0);
   }
 
   @Test

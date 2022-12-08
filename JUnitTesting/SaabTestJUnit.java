@@ -5,11 +5,6 @@ import org.junit.Test;
 import java.awt.*;
 
 public class SaabTestJUnit {
-  @Test
-  public void isCurrentSpeedZero() {
-    Saab95 saab = new Saab95();
-    assertEquals(0.0, saab.getCurrentSpeed(), 0);
-  }
 
   @Test
   public void doesDirectionWork() {
@@ -19,9 +14,10 @@ public class SaabTestJUnit {
   }
 
   @Test
-  public void isEqualFourDoors() {
+  public void testTurnRight() {
     Saab95 saab = new Saab95();
-    assertEquals(2.0, saab.getNrDoors(), 0);
+    saab.turnRight();
+    assertEquals(1.0, saab.getDirection(), 0);
   }
 
   @Test
