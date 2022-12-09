@@ -1,0 +1,26 @@
+Task 5
+1. Should you use implementation inheritance (subclassing) or specification inheritance (interfaces)?
+  The implementation inheritance route should be taken.
+Why?
+  This should be done because a parent class can more directly achieve the task with as little duplication as possible compared to interfaces which requires that one fills the body of content of the functions.
+  
+Could both be used? What advantages and disadvantages do you see?
+  It would be exccesive to utilize both classes and interfaces to complete this task, but it is possible.
+  The advantages of using classes are that common functions and class fields do not need to be redefined.
+  The disadvantages are that the instance parameters have to be passed every time a specific child class is instantiated.
+  
+  The advantages of using interfaces are that it becomes easier to for example identify a car model from another and that it is more reusable.
+  The disadvantages are that common functions and class fields need to be redefined.
+
+1b) What visibility should you use for the different methods and variables that the classes contain? Which interface should you expose?
+ANS:The method that we used for variables is private and the reason for that, is the fact that the limiting the other classes to manipulate those variable.
+ We have even changed the visibility of methods(setTurboOn, setTurboOff) to private becouse they are methods used only for Saab95. other classes dont need those methods and making them private is a great idea.
+ 
+ 2. 
+ We have modified the methods by giving a specific interval by using a "if" condition.
+ We have tested some methods (getCurrentSpeed, GetNrDoors, Move and Gas) for both Volvo and Saab classes, by giving a number in interval that satisfies the given conditions, and a number out of the given interval which resulted in failier. 
+ We have modified the code indeed and tested again untill the program works in given intervals and conditions.
+ 
+
+
+

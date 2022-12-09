@@ -53,6 +53,7 @@ public class DrawPanel extends JPanel{
         {
             ex.printStackTrace();
         }*/
+        this.setVisible(true);
 
     }
 
