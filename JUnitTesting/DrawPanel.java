@@ -13,24 +13,7 @@ import javax.swing.*;
 
 public class DrawPanel extends JPanel{
 
-    String[] adresses;
     ArrayList<Car> cars;
-
-    // Just a single image, TODO: Generalize
-
-    //BufferedImage volvoImage;
-    //BufferedImage saab95Image;
-    //BufferedImage scaniaImage;
-    // To keep track of a singel cars position
-    Point volvoPoint = new Point();
-
-
-    // TODO: Make this genereal for all cars
-    void moveit(ArrayList<Car> c, int i, int x, int y){
-        cars = c;
-        cars.get(i).setXCord(x);
-        cars.get(i).setYCord(y);
-    }
 
     // Initializes the panel and reads the images
     public DrawPanel(int x, int y) {
@@ -53,7 +36,6 @@ public class DrawPanel extends JPanel{
         {
             ex.printStackTrace();
         }*/
-        this.setVisible(true);
 
     }
 
@@ -69,5 +51,10 @@ public class DrawPanel extends JPanel{
             
         }
          // see javadoc for more info on the parameters
+    }
+
+    void update(ArrayList<Car> c) {
+        cars = c;
+        this.repaint();
     }
 }

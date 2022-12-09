@@ -18,33 +18,12 @@ public class CarController {
     private final int delay = 50;
     // The timer is started with an listener (see below) that executes the statements
     // each step between delays.
-    private Timer timer = new Timer(delay, new TimerListener());
+    public Timer timer = new Timer(delay, new TimerListener());
 
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
     // A list of cars, modify if needed
     ArrayList<Car> cars = new ArrayList<>();
-
-    //methods:
-
-    public static void main(String[] args) {
-        // Instance of this class
-        CarController cc = new CarController();
-
-
-
-        cc.cars.add(new Volvo240());
-        cc.cars.add(new Saab95());
-        cc.cars.get(1).setYCord(100);
-        cc.cars.add(new Scania());
-        cc.cars.get(2).setYCord(200);
-
-        // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
-
-        // Start the timer
-        cc.timer.start();
-    }
 
     /* Each step the TimerListener moves all the cars in the list and tells the
     * view to update its images. Change this method to your needs.
@@ -53,11 +32,7 @@ public class CarController {
         public void actionPerformed(ActionEvent e) {
             for (int i = 0; i < cars.size(); i++) {
                 cars.get(i).move();
-                int x = (int) Math.round(cars.get(i).getXCord());
-                int y = (int) Math.round(cars.get(i).getYCord());
-                frame.drawPanel.moveit(cars, i, x, y);
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
+                frame.drawPanel.update(cars);
             }
         }
     }

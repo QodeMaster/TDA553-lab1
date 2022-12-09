@@ -72,7 +72,7 @@ public class Car implements Movable {
 
     public void startEngine(){
         isEngineOn = true;
-	    currentSpeed += 0.1;
+	    currentSpeed = (currentSpeed == 0 ? 0.1 : currentSpeed);
     }
 
     public void stopEngine(){
